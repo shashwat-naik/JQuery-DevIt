@@ -33,12 +33,24 @@ $(document).ready(function () {
   });
 
   // Q5 Add 2 images, 1 paragraph and 1 link. Hide all of them using one button.
-  $(".btn5").click(function (){
+  $(".btn5").click(function () {
     $(".hideme").hide();
   });
 
   // Q6 Create a button. When clicked , change the text of a paragraph to "Welcome to jQuery!".
-  $(".btn6").click(function(){
+  $(".btn6").click(function () {
     $(".Q6").text("Welcome to jQuery!");
+  });
+
+  // Q7
+  $(".btn7").click(function () {
+    const input = $("#password");
+    const currentType = input.attr("type");
+
+    if (currentType === "password") {
+      input.attr("type", "text");
+    } else {
+      input.attr("type", "password");
+    }
   });
 });
