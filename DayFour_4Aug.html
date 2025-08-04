@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 Aug Day 4</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Q1 Create a dropdown menu with option and use .change() to show alert with selected value -->
+    <h3>Q1: Dropdown Change Event</h3>
+    <label for="colors">Choose a color:</label>
+    <select id="colors">
+      <option value="">--Select--</option>
+      <option value="Red">Red</option>
+      <option value="Green">Green</option>
+      <option value="Blue">Blue</option>
+      <option value="Yellow">Yellow</option>
+    </select>
+    <br /><br />
+    <hr />
+
+    <!-- Q2 Design button that shows an alert only once -->
+    <h3>Q2: Alert Only Once</h3>
+    <button id="oneClickBtn">Click Me Once</button>
+    <br /><br />
+    <hr />
+
+    <!-- Q3 Add 3 mouse events to square box -->
+    <h3>Q3: Mouse Events</h3>
+    <div class="box"></div>
+    <br /><br />
+    <hr />
+
+    <!-- Q4 Create 3 dynamic buttons using jQuery -) Use event delegation to handle click events on buttons -->
+    <h3>Q4: Dynamic Buttons with Event Delegation</h3>
+    <div id="buttonContainer"></div>
+    <br /><br />
+    <hr />
+
+    <!-- Q5 Create a link that opens Google, but use e.preventDefault() to stop redirection. (Show an alert "Link blocked!")-->
+    <h3>Q5: Prevent Link Redirect</h3>
+    <a href="https://www.google.com" id="googleLink">Go to Google</a>
+    <br /><br />
+    <hr />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Q1
+        $("#colors").change(function () {
+          const selected = $(this).val();
+          if (selected) {
+            alert("You selected: " + selected);
+          }
+        });
+
+        // Q2
+        $("#oneClickBtn").one("click", function () {
+          alert("This button works only once!");
+        });
+
+        // Q3
+        $(".box")
+          .mouseenter(function () {
+            $(this).css("background-color", "lightgreen");
+          })
+          .mouseleave(function () {
+            $(this).css("background-color", "lightblue");
+          })
+          .click(function () {
+            alert("Box clicked!");
+          });
+
+        // Q4
+        for (let i = 1; i <= 3; i++) {
+          $("#buttonContainer").append(
+            `<button class="dynamicBtn">Button ${i}</button> `
+          );
+        }
+
+        $("#buttonContainer").on("click", ".dynamicBtn", function () {
+          alert($(this).text() + " clicked!");
+        });
+
+        // Q5
+        $("#googleLink").click(function (e) {
+          e.preventDefault();
+          alert("Link blocked!");
+        });
+      });
+    </script>
+  </body>
+</html>
