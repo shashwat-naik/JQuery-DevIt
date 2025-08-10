@@ -1,100 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Div odd color</title>
-    <style>
-      /* General reset */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        background: #f8f9fa;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discussion Task</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f8f9fa;
+    }
 
-      /* Outer div containers */
-      body > div {
-        border: 2px solid #333;
-        padding: 15px;
-        margin-bottom: 20px;
-        background-color: #fff;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        border-radius: 8px;
-      }
+    body > div {
+      border: 2px solid #333;
+      padding: 15px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-radius: 8px;
+    }
 
-      /* Inner div styling (all divs inside containers) */
-      body > div > div {
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-weight: bold;
-      }
+    body > div > div {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      background-color: #4dabf7;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-      /* Different sizes for variety */
-      body > div > div:nth-child(1) {
-        width: 60px;
-        height: 60px;
-        background-color: #ff6b6b;
-      }
-      body > div > div:nth-child(2) {
-        width: 60px;
-        height: 60px;
-        background-color: #4dabf7;
-      }
-      body > div > div:nth-child(3) {
-        width: 60px;
-        height: 60px;
-        background-color: #51cf66;
-      }
-      body > div > div:nth-child(4) {
-        width: 60px;
-        height: 60px;
-        background-color: #845ef7;
-      }
-      body > div > div:nth-child(5) {
-        width: 60px;
-        height: 60px;
-        background-color: #f59f00;
-      }
+    body > div > div:hover {
+      transform: scale(1.1);
+      opacity: 0.85;
+    }
 
-      /* Bonus: Hover effect for fun */
-      body > div > div:hover {
-        transform: scale(1.1);
-        transition: 0.3s;
-        cursor: pointer;
-        opacity: 0.85;
-      }
-    </style>
-  </head>
-  <body>
-    <div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-    </div>
-    <div>
-      <div>A</div>
-      <div>B</div>
-    </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script>
-      $(document).ready(function () {
+    #colorBtn {
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #colorBtn:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="colorBtn">Odd Div Coloring</button>
+
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div class="test">3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+
+  <div>
+    <div>A</div>
+    <div>B</div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("#colorBtn").click(function () {
         $("body>div>div:nth-child(odd)").css({
           backgroundColor: "grey",
-          color: "white",
+          color: "white"
         });
       });
-    </script>
-  </body>
+
+    
+      $("body>div>div").click(function () {
+        $("body>div>div").each(function () {
+          if ($(this).hasClass("test")) {
+            $(this).text("3"); 
+          } else {
+            $(this).text($(this).text().replace("div ", "")); 
+          }
+        });
+
+        let originalText = $(this).attr("class") === "test" ? "test div" : "div " + $(this).text();
+        $(this).text(originalText);
+      });
+
+    });
+  </script>
+
+</body>
 </html>

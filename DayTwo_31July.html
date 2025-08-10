@@ -1,186 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Day Two 31 July</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day Two 31 July</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Q1 -->
+    <section id="q1">
+      <h3>Q1 - input vs :input</h3>
+      <form>
+        <label>Name: </label>
+        <input type="text" name="Name" />
 
-  <!-- Q1 -->
-  <section id="q1">
-    <h3>Q1 - input vs :input</h3>
-    <form>
-      <label>Name: </label>
-      <input type="text" name="Name" />
+        <label>Email: </label>
+        <input type="email" name="Email" /> <br /><br />
 
-      <label>Email: </label>
-      <input type="email" name="Email" /> <br><br>
+        <label>DOB</label>
+        <input type="datetime-local" name="datetime" /> <br />
 
-      <label>DOB</label>
-      <input type="datetime-local" name="datetime" /> <br>
+        <label>City: </label>
+        <input type="text" name="text" /> <br />
 
-      <label>City: </label>
-      <input type="text" name="text" /> <br>
+        <label>State: </label>
+        <input type="text" name="text" /> <br />
 
-      <label>State: </label>
-      <input type="text" name="text" /> <br>
+        <label>Country: </label>
+        <input type="text" name="text" /> <br />
 
-      <label>Country: </label>
-      <input type="text" name="text" /> <br>
+        <label>Contact number:</label>
+        <input type="tel" name="tel" /> <br />
 
-      <label>Contact number:</label>
-      <input type="tel" name="tel" /> <br>
+        <label>Suggestions</label>
+        <textarea name="textarea"></textarea>
+      </form>
+      <button id="demo">Submit</button>
+    </section>
 
-      <label>Suggestions</label>
-      <textarea name="textarea"></textarea>
-    </form>
-    <button id="demo">Submit</button>
-  </section>
+    <!-- Q2 -->
+    <section id="q2">
+      <h3>Q2 - Checked selector</h3>
+      <form>
+        <fieldset>
+          <legend>Gender</legend>
+          <label
+            >Male: <input type="radio" name="radiogroup" value="Male"
+          /></label>
+          <label
+            >Female: <input type="radio" name="radiogroup" value="Female"
+          /></label>
+        </fieldset>
 
-  <!-- Q2 -->
-  <section id="q2">
-    <h3>Q2 - Checked selector</h3>
-    <form>
-      <fieldset>
-        <legend>Gender</legend>
-        <label>Male: <input type="radio" name="radiogroup" value="Male" /></label>
-        <label>Female: <input type="radio" name="radiogroup" value="Female" /></label>
-      </fieldset>
+        <fieldset>
+          <legend>Skillset:</legend>
+          <label
+            >HTML: <input type="checkbox" name="checkgroup[]" value="HTML"
+          /></label>
+          <label
+            >CSS: <input type="checkbox" name="checkgroup[]" value="CSS"
+          /></label>
+          <label
+            >JavaScript:
+            <input type="checkbox" name="checkgroup[]" value="JavaScript"
+          /></label>
+          <label
+            >jQuery: <input type="checkbox" name="checkgroup[]" value="jQuery"
+          /></label>
+        </fieldset>
+      </form>
+      <button class="demo">Get Data</button>
+    </section>
 
-      <fieldset>
-        <legend>Skillset:</legend>
-        <label>HTML: <input type="checkbox" name="checkgroup[]" value="HTML" /></label>
-        <label>CSS: <input type="checkbox" name="checkgroup[]" value="CSS" /></label>
-        <label>JavaScript: <input type="checkbox" name="checkgroup[]" value="JavaScript" /></label>
-        <label>jQuery: <input type="checkbox" name="checkgroup[]" value="jQuery" /></label>
-      </fieldset>
-    </form>
-    <button class="demo">Get Data</button>
-  </section>
+    <!-- Q3 -->
+    <section id="q3">
+      <h3>Q3 - Selected selector</h3>
+      <form>
+        <label>Select the country</label>
+        <select class="dropdwnCountry">
+          <option>--Select one--</option>
+          <option>France</option>
+          <option>Germany</option>
+          <option>India</option>
+          <option>United Kingdom</option>
+        </select>
+      </form>
+    </section>
 
-  <!-- Q3 -->
-  <section id="q3">
-    <h3>Q3 - Selected selector</h3>
-    <form>
-      <label>Select the country</label>
-      <select class="dropdwnCountry">
-        <option>--Select one--</option>
-        <option>France</option>
-        <option>Germany</option>
-        <option>India</option>
-        <option>United Kingdom</option>
-      </select>
-    </form>
-  </section>
+    <!-- Q4 -->
+    <section id="q4">
+      <h3>Q4 - Disabled & Enabled</h3>
+      <form>
+        <label>Name: </label>
+        <input type="text" name="Name" />
 
-  <!-- Q4 -->
-  <section id="q4">
-    <h3>Q4 - Disabled & Enabled</h3>
-    <form>
-      <label>Name: </label>
-      <input type="text" name="Name" />
+        <label>Email: </label>
+        <input type="email" name="Email" disabled /> <br /><br />
 
-      <label>Email: </label>
-      <input type="email" name="Email" disabled /> <br><br>
+        <label>City: </label>
+        <input type="text" name="text" /> <br />
 
-      <label>City: </label>
-      <input type="text" name="text" /> <br>
+        <label>State: </label>
+        <input type="text" name="text" disabled /> <br />
+      </form>
+      <button class="btn1">Highlight</button>
+    </section>
 
-      <label>State: </label>
-      <input type="text" name="text" disabled /> <br>
-    </form>
-    <button class="btn1">Highlight</button>
-  </section>
+    <!-- Q5 -->
+    <section id="q5">
+      <h3>Q5 - Each method</h3>
+      <div class="each-box" id="1st">This is 1st text</div>
+      <div class="each-box" id="2nd">This is 2nd text</div>
+      <div class="each-box" id="3rd">This is 3rd text</div>
+      <button class="btn5">Click Me</button>
+    </section>
 
-  <!-- Q5 -->
-  <section id="q5">
-    <h3>Q5 - Each method</h3>
-    <div class="each-box" id="1st">This is 1st text</div>
-    <div class="each-box" id="2nd">This is 2nd text</div>
-    <div class="each-box" id="3rd">This is 3rd text</div>
-    <button class="btn5">Click Me</button>
-  </section>
+    <!-- Q6 -->
+    <section id="q6">
+      <h3>Q6 - Event Chaining</h3>
+      <button class="btn6">Hover Me</button>
+    </section>
 
-  <!-- Q6 -->
-  <section id="q6">
-    <h3>Q6 - Event Chaining</h3>
-    <button class="btn6">Hover Me</button>
-  </section>
+    <!-- Q7 -->
+    <section id="q7">
+      <h3>Q7 - JSON Obj to string and string to obj</h3>
+    </section>
 
-  <!-- Q7 -->
-  <section id="q7">
-    <h3>Q7 - JSON Obj to string and string to obj</h3>
-  </section>
-
-  <script>
-    $(document).ready(function () {
-
-      // Q1 
-      $("#demo").click(function (e) {
-        e.preventDefault();
-        let allInput = $("#q1 input").length;
-        let allInputSelector = $("#q1 :input").length;
-        console.log(`Total <input>: ${allInput} | Total :input: ${allInputSelector}`);
-      });
-
-      // Q2 
-      $(".demo").click(function () {
-        $('#q2 input[type="checkbox"]:checked').each(function () {
-          console.log($(this).val());
-        });
-        $('#q2 input[type="radio"]:checked').each(function () {
-          console.log($(this).val());
-        });
-      });
-
-      // Q3
-      $(".dropdwnCountry").change(function () {
-        let dropdwnCountryVal = $(".dropdwnCountry option:selected").text();
-        console.log(`${dropdwnCountryVal} is the country I belong to.`);
-      });
-
-      // Q4
-      $(".btn1").click(function () {
-        let enabled = $("#q4 :input:enabled");
-        let disabled = $("#q4 :input:disabled");
-
-        enabled.css("border", "2px solid green");
-        disabled.css("border", "2px solid red");
-
-        console.log("Enabled Inputs:", enabled);
-        console.log("Disabled Inputs:", disabled);
-      });
-
-      // Q5 
-      $(".btn5").click(function () {
-        $("#q5 .each-box").each(function (index, item) {
-          console.log(`${index} - ${$(item).attr('id')} - ${$(item).text()}`);
-        });
-      });
-
-      // Q6 
-      $(".btn6")
-        .mouseover(function () {
-          alert("Mouse Over");
-        })
-        .mouseleave(function () {
-          alert("Mouse Out");
+    <script>
+      $(document).ready(function () {
+        // Q1
+        $("#demo").click(function (e) {
+          e.preventDefault();
+          let allInput = $("#q1 input").length;
+          let allInputSelector = $("#q1 :input").length;
+          console.log(
+            `Total <input>: ${allInput} | Total :input: ${allInputSelector}`
+          );
         });
 
-      // Q7 
-      let employee1 = { firstname: "Rick", lastname: "Brown", age: 22, salary: 15000 };
-      let string = JSON.stringify(employee1);
-      console.log("Object to String:", string);
-      
+        // Q2
+        $(".demo").click(function () {
+          $('#q2 input[type="checkbox"]:checked').each(function () {
+            console.log($(this).val());
+          });
+          $('#q2 input[type="radio"]:checked').each(function () {
+            console.log($(this).val());
+          });
+        });
 
-      let employee2 = '{"firstname": "Rick", "lastname": "Brown", "age": 22, "salary": 15000}';
-      let object = JSON.parse(employee2);
-      console.log("String to Object:", object);
+        // Q3
+        $(".dropdwnCountry").change(function () {
+          let dropdwnCountryVal = $(".dropdwnCountry option:selected").text();
+          console.log(`${dropdwnCountryVal} is the country I belong to.`);
+        });
 
-    });
-  </script>
+        // Q4
+        $(".btn1").click(function () {
+          let enabled = $("#q4 :input:enabled");
+          let disabled = $("#q4 :input:disabled");
 
-</body>
+          enabled.css("border", "2px solid green");
+          disabled.css("border", "2px solid red");
+
+          console.log("Enabled Inputs:", enabled);
+          console.log("Disabled Inputs:", disabled);
+        });
+
+        // Q5
+        $(".btn5").click(function () {
+          $("#q5 .each-box").each(function (index, item) {
+            console.log(`${index} - ${$(item).attr("id")} - ${$(item).text()}`);
+          });
+        });
+
+        // Q6
+        $(".btn6")
+          .mouseover(function () {
+            alert("Mouse Over");
+          })
+          .mouseleave(function () {
+            alert("Mouse Out");
+          });
+
+        // Q7
+        let employee1 = {
+          firstname: "Rick",
+          lastname: "Brown",
+          age: 22,
+          salary: 15000,
+        };
+        let string = JSON.stringify(employee1);
+        console.log("Object to String:", string);
+
+        let employee2 =
+          '{"firstname": "Rick", "lastname": "Brown", "age": 22, "salary": 15000}';
+        let object = JSON.parse(employee2);
+        console.log("String to Object:", object);
+      });
+    </script>
+  </body>
 </html>

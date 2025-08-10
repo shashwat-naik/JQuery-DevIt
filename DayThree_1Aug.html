@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1 Aug Day 2</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+        border: 2px solid orange;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .text {
+        font-weight: bold;
+        color: blue;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Q1 DOM Manipulation -->
+    <h3>jQuery DOM Manipulation</h3>
+    <section>
+      <div title="sampleDiv1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, enim
+        veritatis ab fugiat ducimus, totam ratione quod
+      </div>
+      <div title="sampleDiv2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, enim
+        veritatis ab fugiat ducimus, totam ratione quod
+      </div>
+      <div title="sampleDiv3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, enim
+        veritatis ab fugiat ducimus, totam ratione quod
+      </div>
+    </section>
+    <br />
+    <button class="btn1">Click Me</button>
+
+    <br /><br />
+
+    <!-- Q2 -->
+    <h3>jQuery wrap Method</h3>
+    <div class="Q2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, enim
+      veritatis ab fugiat ducimus, totam ratione quod
+    </div>
+    <br />
+    <button class="btn2">Click Me</button>
+
+    <br /><br />
+
+    <!-- Q3 -->
+    <h3>Append Element</h3>
+    <div class="div1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, enim
+      veritatis ab fugiat ducimus, totam ratione quod
+    </div>
+    <br />
+    <button class="btn3">Append</button>
+    <br /><br />
+
+    <!-- Q4 -->
+    <h3>Add, Remove & Toggle Class</h3>
+    <div class="Q4-box">
+      This box will have classes added, removed, and toggled.
+    </div>
+    <br />
+    <button class="btn4-add">Add Class</button>
+    <button class="btn4-remove">Remove Class</button>
+    <button class="btn4-toggle">Toggle Class</button>
+    <br /><br />
+
+    <!-- Q5 -->
+    <h3>jQuery Map Method</h3>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>jQuery</li>
+      <li>ReactJS</li>
+      <li>Angular</li>
+    </ul>
+    <br /><br />
+
+    <!-- Q5 -->
+    <h3>Difference Between .each() and .map()</h3>
+    <ul class="Q5-list">
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Cherry</li>
+    </ul>
+    <br />
+    <button class="btn5-each">Run .each()</button>
+    <button class="btn5-map">Run .map()</button>
+
+    <div class="Q5-output" style="margin-top: 10px; font-weight: bold"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Q1
+        $("section div").attr({
+          title: "MyDiv",
+          style:
+            "border:2px solid black; background-color: skyblue; border-radius: 30px",
+        });
+
+        $(".btn1").click(function () {
+          $("section div").each(function () {
+            console.log($(this).attr("title"));
+          });
+        });
+
+        // Q2
+        $(".btn2").click(function () {
+          $(".Q2").wrap("<section></section>");
+        });
+
+        // Q3
+        $(".btn3").click(function () {
+          $(".div1").append("<h4>This is some content</h4>");
+        });
+
+        // Q4
+        $(".btn4-add").click(function () {
+          $(".Q4-box").addClass("text");
+        });
+
+        $(".btn4-remove").click(function () {
+          $(".Q4-box").removeClass("text");
+        });
+
+        $(".btn4-toggle").click(function () {
+          $(".Q4-box").toggleClass("highlight");
+        });
+
+        // Q5
+        let string = $("li")
+          .map(function (index, item) {
+            return $(item).text();
+          })
+          .get()
+          .join(";");
+        console.log(string);
+
+        // Q6
+        $(".btn5-each").click(function () {
+          let text = "";
+          $(".Q5-list li").each(function (index, element) {
+            text += index + 1 + ". " + $(element).text() + "<br>";
+          });
+          $(".Q5-output").html("<u>.each() Output:</u><br>" + text);
+        });
+
+        $(".btn5-map").click(function () {
+          let fruitArray = $(".Q5-list li")
+            .map(function () {
+              return $(this).text().toUpperCase();
+            })
+            .get(); 
+
+          $(".Q5-output").html(
+            "<u>.map() Output:</u><br>" + fruitArray.join(", ")
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
